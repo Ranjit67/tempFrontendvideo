@@ -8,7 +8,7 @@ export default function JoinRoom() {
   const [setCall, setsetCall] = useState("");
 
   useEffect(() => {
-    socketRef.current = io.connect("http://localhost:4000/");
+    socketRef.current = io.connect("https://groupapi.herokuapp.com/");
     socketRef.current.emit("call", socketRef.current.id);
     socketRef.current.on("for join", (host) => {
       const hostArray = Object.keys(host);
